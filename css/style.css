@@ -1,0 +1,47 @@
+.red-box{
+    float : left;
+    width : 120px;
+    height : 120px;
+    margin: 10px 10px 205px 0px;
+    padding: 40px 0px 60px 0px;
+    color : red;
+    background-color: #000000;
+}
+
+#your-name{
+    width : 400px;
+    margin-top : 30px;
+    border : 5px solid #505050;
+    background-color: rgb(182, 187, 123);
+    padding: 25px;
+}
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(222, 212, 126);
+    font-family: Arial;
+    font-size: 20px;
+    padding : 5px; 
+}
+
+.h1-p{
+    color: red;
+}
+
+.h2-p{
+    float : right;
+}
+
+image{
+    background-size: 20px;
+}
+
+.hart{
+    background-size : 20px;
+}
+
