@@ -82,4 +82,9 @@ $(document).ready(function(){
         $("#ul-todo").append("<li>" + ($("#todo").val()) + "</li>");
         $("#todo").val("");
     });
+
+    $("#button-hide").click(function(){
+        $("#hide-div").hide();
+    });
+
 });
