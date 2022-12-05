@@ -85,8 +85,6 @@
         <button id = "todo-button">add todo</button>
         <ol id = "ul-todo"></ol>
 
-    </div>
-
         <br><br>
         <button id = "Animate-button">Animate button</button>
         <button id ="Animate-button2">Animate button2</button>
@@ -113,8 +111,8 @@
                 //애니메이션 순차실행도 가능
                 //확인결과 색상 변경은 불가능함
                 $("#Animate-button2").click(function(){
-                    $("#Animate-div").animate({left: '200px', right : '200px'});
-                    div.animate({background:"#cc00cc", width: '200px', height : '300px', opacity : '0.5'});
+                    div.animate({left: '200px', right : '200px'});
+                    div.animate({width: '200px', height : '300px', opacity : '0.5'});
                     div.animate({width : '300px', opacity : '0.4'});
                     div.animate({height : '100px', opacity : '0.3'});
                     div.animate({width : '100px', opacity : '0.7'});
@@ -166,7 +164,153 @@
         });
 
         </script>
+
+
+        <script>
+            //test, value변경하기
+            $(document).ready(function(){
+                $("#settext").click(function(){
+                    $("#div1").text("첫번째 SETTING")
+                });
+
+                $("#sethtml").click(function(){
+                    $("#div2").html("<b>두번째 SETTING</b>")
+                });
+
+                $("#setvalue").click(function(){
+                    $("#textbox").val("JSP PROJECT")
+                });
+            });
+        </script>
+
+        <p id = div1>첫번째 set test.</p>
+        <p id = "div2">두번째 문장 set test. </p>
+        <p>세번째 value set test. <input type = "text" id = "textbox" value  ="JAVA SCHOOL"/> </p>
+
+        <input type = "button" id = "settext" value = "Set text"/>
+        <input type = "button" id = "sethtml" value = "Set html"/>
+        <input type = "button" id = "setvalue" value = "Set value"/><br>
+        <br><br><hr>
+
+        <script>
+            //제거하기
+            $(document).ready(function(){
+                $("#removebutton").click(function(){
+                    $("#removediv").remove();
+                });
+            });
+        </script>
+
+        <style>
+            #removediv{
+                border : 2px solid green; 
+                background-color: gray; 
+                width: 300px;
+            }
+        </style>
+
+        <div id ="removediv">
+            DIV 안에 사라질 문장들 
+            <p>사라질 문장1<p>
+            <p>사라질 문장2</p>
+        </div>
+        <input type = button id = removebutton value = "Remove div">
+        <br><br><hr>
+
+        <script>
+            //선택한 요소만 제거하기
+            $(document).ready(function(){
+                $("#removedivchild").click(function(){
+                    //$("#child2").remove();
+                    $("p").remove("#child2");                    
+                    //$("p.#child2").remove();
+                });
+            });
+        </script>
+
+        <div id = "removechild">
+            <p id = "child0">test0 문장</p>
+            <p id = "child1">test1 문장</p>
+            <p id = "child2">test2 문장</p>
+        </div>
+
+        <input type = "button" id = "removedivchild" value = "Remove element's chlid">
+        <br><br><hr>
+
+        <script>
+            //element.addClass("css 이름");
+            $(document).ready(function(){
+                $("#Add_css").click(function(){
+                    $("h1, h2, #ppp, #pppp").addClass("C_color");
+                    $("#div5").addClass("C_bigger");
+                });
+            });
+
+        </script>
+
+        <style>
+            .C_color{
+                color :red;
+            }      
+            .C_bigger{
+                font-size : 88px;
+                font-weight: bold;
+            }  
+        </style>
+
+        <h1>HEADING H1</h1>
+        <h2>HEADING H2</h2>
+        <p id = "ppp">PARAGRAPH 1<p>
+        <p id = "pppp">PARAGRAPH 2</p>
+        <div id = div5>중요한 내용, 크게 만들기</div>
+        <br>
+        <button id = "Add_css">Add CSS</button>
+        <br><br><hr>
+
+        <script>
+            $(document).ready(function(){
+                $("#removebutton2").click(function(){
+                    $("#h1h1, #div6").removeClass("C_blue");
+                });
+                $("#togglebutton").click(function(){
+                    $("#h1h1, #div6").toggleClass("C_blue");
+                });
+            });        
+        </script>
+
+        <style>
+            .C_blue{
+                color : blue;
+                font-size : 24px;
+            }
+        </style>
+
+            <h4 class = "C_blue" id = "h1h1">배고파</h4>
+            <div class = C_blue id = "div6">CSS 제거하기</div>
+
+            <input type = button id = "removebutton2" value = "Remove CSS"/>
+            <input type = button id = "togglebutton" value = "Toggle CSS"/>
+            <br><br><hr>
+
+        <script>
+            $(document).ready(function(){
+                $("#setcss").click(function(){
+                    //$("#p1, #p2, #p3, #p4").css("background-color", "orange");
+                    $("#p1, #p2, #p3, #p4").css({"background-color": "orange", "font-size": "200%", "color": "green"});
+                });
+            });
+        </script>
+
+        <p id = p1 style = "background-color: pink;">pink background</p>
+        <p id = p2 style = "background-color: green;">green background</p>
+        <p id = p3 style = "background-color: lightyellow;">lightyellow background</p>
+        <p id =p4 >no back ground</p>
+        
+        <button id ="setcss">Set css</button>
+        <br<br><hr>
+        
+    </div>
     </div>
 
 </body>
-</html>
+</html> 
