@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>   
+    <script src="https://code.jquery.com/color/jquery.color-2.2.0.min.js" integrity="sha256-aSe2ZC5QeunlL/w/7PsVKmV+fa0eDbmybn/ptsKHR6I=" crossorigin="anonymous"></script> 
+    <script src = "js/script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#button0").click(function(){
+               //$("div, ul, li, span").toggleClass("ancestors");
+               //$("div, ul, li, span").css({"border" : "2px solid black", "color" : "black"});
+            });
+
+            $("#button1").click(function(){
+                //css가 한가지일떄
+                $("span").parent().css("border" , "2px solid");
+                $("span").parent().css("color" , "red");
+            });
+
+            $("#button2").click(function(){
+                //css가 여러개 일떄
+                $("span").parents("ul").css({"border" : "2px solid red", "color" : "red"});
+            });
+
+            $("#button3").click(function(){
+                $("span").parentsUntil("div").css({"border" : "2px solid red", "color" : "red"});
+            });
+
+            $("#button4").click(function(){
+                $("div").children().css({"border" : "2px solid red", "color" : "red"});
+            });
+
+            $("#button5").click(function(){
+                $("div").find("span").css({"border" : "2px solid red", "color" : "red"});
+            });
+        });
+    </script>   
+
+    <style>
+        .ancestors * {
+            display: block;
+            border : 2px solid black;
+            color : black;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class = "ancestors" style = "width : 500px">
+        <div> div(great-grandparent)
+            <ul> ul(grandparent)
+                <li> li(direct parent)
+                    <span> span </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button id = "button0">초기화.. 안되네</button>
+    <br>
+    <button id = "button1">parent(li) 색상 변경 하기</button>
+    <button id = "button2">parents(ul) 색상 변경 하기</button>
+    <button id = "button3">parentsUntil(div) 색상 변경 하기</button>
+    <br>
+    <button id = "button4">children 색상 변경 하기</button>
+    <button id = "button5">find 색상 변경 하기</button>
+
+    <p>
+        DOM(HTML 요소들의 구조화된 표현)<br>
+        traversing (영역을 가로 지른다)<br>
+
+        해당 객체 상위 : ancestors<br>
+        ↔ 해당 객체 하위 : descendants
+        해당 객체 바로 윗단 : parent<br>
+        $(스팬).parent().css(border color를 붉은 색으로)<br>
+        ↔ $(div).childer().css(border color를 붉은 색으로)<br>
+        $(스팬).parents(특정대상).css(border color를 붉은 색으로)<br>
+        $(스팬).parentsUntil(특정대상 사이 전부).css(border color를 붉은 색으로)<br>
+        %(ancestors 객체중 하나).find(특정대상 or 열겨).css(border color를 붉은 색으로)<br>
+    </p>
+
+</body>

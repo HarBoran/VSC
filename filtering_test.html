@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>   
+    <script src="https://code.jquery.com/color/jquery.color-2.2.0.min.js" integrity="sha256-aSe2ZC5QeunlL/w/7PsVKmV+fa0eDbmybn/ptsKHR6I=" crossorigin="anonymous"></script> 
+    <script src = "js/script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            background-color : pink;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#button6").click(function(){
+                $("div").first().css({"background-color" : "yellow"})
+            });            
+
+            $("#button7").click(function(){
+                $("div").last().css({"background-color" : "green"})
+            });   
+        });
+
+    </script>
+    
+</head>
+
+
+<body>
+    <h1>filtering test</h1>
+
+    <div>
+        <p>첫번째 div</p>
+    </div>
+    <br>
+    <div>
+        <p>두번째 div</p>
+    </div>
+    <br>
+    <div>
+        <p>세번째 div</p>
+    </div>
+
+    <button id = "button6">노란색</button>
+    <button id = "button7">초록 색</button>
+
+    <p>
+        TRAVERSING : ancestors<br>
+        descendants (find())<br>
+        filtering<br>
+        <br>
+        $(div).first().css(노란색) first//last만 존재함
+    </p>
+
+</body>

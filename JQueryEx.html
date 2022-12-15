@@ -22,7 +22,22 @@
     <h2>JQuery 연습</h2>
 
     <div id = "hide-div">
+
+        <script>
+        $(document).ready(function(){
+            $("#button-hide").click(function(){
+                $("p").hide();
+            });
+        });  
+        </script>
+
         <button id = "button-hide" style = "width:300px; height:200px;">hide</button>      
+
+        <script>
+        $(document).ready(function(){
+            $("#red-box").fadeOut(2000);
+        });  
+        </script>
 
         <div id = "red-box">Red</div>
         <div id = "green-box">Green</div>
@@ -31,65 +46,196 @@
         <div id = "maroon-box">Maroon</div>
         <div class = "clear"></div>
 
+        <script>
+        $(document).ready(function(){
+            $("#click-event").click(function(){
+                $(this).hide();
+            });
+
+            $("#mouse-over").mouseenter(function(){
+                alert("마우스를 올리셨네여");
+            });
+        });    
+        </script>
+
         <p>jquery selector 학습</p>
         <p>effect 첫번째</p>
         <button id ="hi">사라져라</button>
         <p id = "click-event">누르면 사라짐</p>
         <P id = "mouse-over">마우스를 올리면 alert창이 뜹니다.</P>
 
+        <script>
+        $(document).ready(function(){
+            $("#show").click(function(){
+                $("#hide-text").show(2000);
+            });
+
+            $("#hide").click(function(){
+                $("#hide-text").hide(2000);
+            }); 
+        });    
+        </script>
+
         <p id = "hide-text">사라졌다 다시보임</p>
         <button id = "hide">Hide</button>
         <button id = "show">Show</button>
         
+        <script>
+        $(document).ready(function(){
+            $("#toggle-button").click(function(){
+                $("#toggle").toggle(2000);
+            }); 
+        });   
+        </script>
+
         <br>
         <p id ="toggle">토글버튼이 작동하는 영역 입니다</p>
         <button id="toggle-button">토글버튼</button>
 
+        <script>
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $("#green-box").fadeOut("slow");
+            });
+        });  
+        </script>
+
         <br><br>
         <button id = "button1">초록색이 사라지는 버튼</button>
+
+        <script>
+        $(document).ready(function(){
+            $("#button2").click(function(){
+                $("#blue-box").fadeIn(2000);
+                $("#green-box").fadeIn(3000);
+            });
+        });  
+        </script>
 
         <br><br>
         <button id = "button2">초록색, 파란색이 나타나는 버튼</button>
         <!-- css에 display:none을 추가해야 작동합 -->
 
+        <script>
+        $(document).ready(function(){
+            $("#button3").click(function(){
+                $("#maroon-box").fadeTo("20000", 0.25);
+            });
+        });      
+        </script>
+
         <br><br>
         <button id = "button3">fadeTO버튼</button>
+
+        <script>
+        $(document).ready(function(){
+            $("#button4").click(function(){
+                $("#pink-box").slideUp(2000);
+            });
+
+            $("#button5").click(function(){
+                $("#pink-box").slideDown(3000);
+            });
+
+            $("#button6").click(function(){
+                $("#pink-box").slideToggle("show");
+            }); 
+        });  
+        </script>
 
         <br><br>
         <button id = "button4">핑크색 슬라이드 업</button>
         <button id = "button5">핑크색 슬라이드 다운</button>
         <button id = "button6">핑크색 슬라이드 토글</button>
 
+        <script>
+        $(document).ready(function(){
+            $("#callback-button").click(function(){
+                $("#callback").hide("fast",function(){
+                    alert("마우스를 올리셨네요");
+                });
+            });  
+        });    
+        </script>
+
         <br><br>
         <div id =callback>여기는 사라지고 팝업도 띄웁니다.</div>
         <button id ="callback-button">hide and alert</button>
+
+        <script>
+        $(document).ready(function(){
+            $("#double-button").click(function(){
+            $("#double").toggle(2000);
+            alert("fagyfhdad");
+        }); 
+        });      
+        </script>
 
         <br><br>
         <div id = "double">동시에 작동해야함</div>
         <button id = "double-button">double area</button>
 
+        <script>
+        $(document).ready(function(){
+            $("#chaining").click(function(){
+                $("#maroon-box").slideUp(6000).css("background-color", "blue").slideDown();
+            });           
+        });          
+        </script>
+
         <br><br>
         <button id = "chaining">chaining</button>
+
+        <script>
+        $(document).ready(function(){
+            $("#get-text").click(function(){
+                alert("Text: " + $("#text-box").text());
+            });
+
+            $("#get-html").click(function(){
+                alert("HTML: " + $("#text-box").html());
+            });     
+        });              
+        </script>
 
         <br><br>
         <div id = "text-box">입력하신 <b>아이디</b>는 <i>qwert</i>입니다</div>
         <button id = "get-text">alert: Get Text</button>
         <button id = "get-html">alert: Get HTML</button>
 
+        <script>
+        $(document).ready(function(){
+            $("#get-value-button").click(function(){
+            alert("Value: " + $("#get-value").val());
+        });        
+        });              
+        </script>
+
         <br><br>
         Name : <input type = "text" id ="get-value" value = "Dome Test"/>
         <button id = "get-value-button">get Value</button>
+
+        <script>
+        $(document).ready(function(){
+            $("#todo-button").click(function(){
+            $("#ul-todo").append("<li>" + ($("#todo").val()) + "</li>");
+            $("#todo").val("");
+        });    
+        });              
+        </script>
 
         <br><br>
         Todo : <input type = "text" id = "todo"/>
         <button id = "todo-button">add todo</button>
         <ol id = "ul-todo"></ol>
 
+
+
         <br><br>
         <button id = "Animate-button">Animate button</button>
         <button id ="Animate-button2">Animate button2</button>
         <div id = "Animate-div" style = "width : 100px;  height : 100px;  background: #bf2121; position: relative;">BOX</div>
-        
+
         <script>       
             //애니매이션 주기 
             //$(선택자).animate({스타일} ,지속시간 ,콜백 함수);
@@ -309,7 +455,12 @@
         <button id ="setcss">Set css</button>
         <br<br><hr>
         
+    
+    여기까지 하이드 영역
     </div>
+
+
+    여기까지 흰색 박스 영역
     </div>
 
 </body>
